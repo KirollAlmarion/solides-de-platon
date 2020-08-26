@@ -1,0 +1,52 @@
+:root {
+    --cote-cube: 20vh;
+    --moitie-cube: calc(var(--cote-cube) / 2);
+    --decalage-cube: calc(15vh - var(--moitie-cube));
+}
+
+.cube{
+    width: var(--cote-cube);
+    height: var(--cote-cube);
+    transform-style: preserve-3d;
+    transform-origin: 15vh 15vh 0vh;   
+}
+
+.carre{
+    width: var(--cote-cube);
+    height: var(--cote-cube);
+    line-height: var(--cote-cube);
+    font-family: sans-serif;
+    overflow: hidden;
+    font-size: calc(var(--cote-cube) * 1.77);
+    text-indent: calc(var(--cote-cube) * -.16);
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+    background-color: var(--couleur);
+    color: var(--couleurFoncee);
+    outline: 1px solid var(--couleurFoncee);
+}
+
+#carre-avant{
+    transform: translateZ(var(--moitie-cube));
+}
+
+#carre-arriere{
+    transform: rotateY(180deg) translateZ(var(--moitie-cube));
+}
+
+#carre-droite{
+    transform: rotateY(90deg) translateZ(var(--moitie-cube));
+}
+
+#carre-gauche{
+    transform: rotateY(-90deg) translateZ(var(--moitie-cube));
+}
+
+#carre-haut{
+    transform: rotateX(90deg) translateZ(var(--moitie-cube));
+}
+
+#carre-bas{
+    transform: rotateX(-90deg) translateZ(var(--moitie-cube));
+}

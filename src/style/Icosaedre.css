@@ -1,0 +1,140 @@
+:root{
+    --arete-ico: 15vh;
+    --milieu-ico: calc(var(--arete-ico) / 2);
+    --hauteur-ico: calc(var(--arete-ico) * .866);
+    --milieu-hauteur-ico: calc(var(--hauteur-ico) / 2);
+    --decalage-x-face-ico: calc(15vh - var(--milieu-ico));
+    --decalage-y-face-ico: calc(15vh - var(--milieu-hauteur-ico));
+    --diedre-ico: 138.19deg;
+    --angle-sommet-ico: 52.62deg;
+    --angle-cupule-ico: calc(90deg - var(--angle-sommet-ico));
+    --angle-presque-vertical-ico: calc(var(--diedre-ico) - calc(180deg - var(--angle-sommet-ico)));
+    --hauteur-cupule-ico: calc(0.5257 * var(--arete-ico));
+    --rayon-sphere-circonscrite-ico: calc(0.951 * var(--arete-ico));
+    --distance-inter-base-ico: calc(calc(var(--rayon-sphere-circonscrite-ico) - var(--hauteur-cupule-ico)) * 2);
+    --delta-hauteur-ico: calc(var(--hauteur-ico) - var(--distance-inter-base-ico));
+    --decalage-vertical-ico: calc(var(--hauteur-cupule-ico) - var(--delta-hauteur-ico));
+    --apotheme-pentagone-ico: calc(0.688 * var(--arete-ico));
+    --decalage-z-ico: calc(var(--apotheme-pentagone-ico) * 0.809);
+    --decalage-x-ico: calc(var(--apotheme-pentagone-ico) * 0.588);
+    --decalage-z-bis-ico: calc(var(--apotheme-pentagone-ico) * 0.309);
+    --decalage-x-bis-ico: calc(var(--apotheme-pentagone-ico) * 0.951);
+}
+
+.face-ico > img{
+    max-width: var(--arete-ico);
+}
+
+.icosaedre{
+    width: var(--arete--octa);
+    height: var(--arete--octa);
+    transform-style: preserve-3d;
+    transform-origin: 15vh 15vh 0vh;   
+}
+
+.face-ico{
+    transform-style: preserve-3d;
+    position: absolute;
+    left: var(--decalage-x-face-ico);
+    top: var(--decalage-y-face-ico);
+}
+
+#ico1{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--decalage-vertical-ico) * -1)) rotateX(var(--angle-sommet-ico));
+}
+
+#ico19{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--decalage-vertical-ico) * -1)) rotateY(72deg) rotateX(var(--angle-sommet-ico));
+}
+
+#ico7{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--decalage-vertical-ico) * -1)) rotateY(-72deg) rotateX(var(--angle-sommet-ico));
+}
+
+#ico3{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--decalage-vertical-ico) * -1)) rotateY(144deg) rotateX(var(--angle-sommet-ico));
+}
+
+#ico17{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--decalage-vertical-ico) * -1)) rotateY(-144deg) rotateX(var(--angle-sommet-ico));
+}
+
+#ico8{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(calc(var(--apotheme-pentagone-ico) * -1)) rotateX(var(--angle-presque-vertical-ico));
+}
+
+#ico16{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(calc(var(--decalage-z-ico) * -1)) translateY(calc(var(--distance-inter-base-ico) * -1)) translateX(var(--decalage-x-ico)) rotateY(-36deg) rotateX(calc(var(--angle-presque-vertical-ico) * -1)) rotate(180deg);
+}
+
+#ico10{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(calc(var(--decalage-z-ico) * -1)) translateY(calc(var(--distance-inter-base-ico) * -1)) translateX(calc(var(--decalage-x-ico) * -1)) rotateY(36deg) rotateX(calc(var(--angle-presque-vertical-ico) * -1)) rotate(180deg);
+}
+
+#ico9{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(var(--decalage-z-bis-ico)) translateY(calc(var(--distance-inter-base-ico) * -1)) translateX(var(--decalage-x-bis-ico)) rotateY(-108deg) rotateX(calc(var(--angle-presque-vertical-ico) * -1)) rotate(180deg);
+}
+
+#ico15{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(var(--decalage-z-bis-ico)) translateY(calc(var(--distance-inter-base-ico) * -1)) translateX(calc(var(--decalage-x-bis-ico) * -1)) rotateY(108deg) rotateX(calc(var(--angle-presque-vertical-ico) * -1)) rotate(180deg);
+}
+
+#ico13{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(var(--apotheme-pentagone-ico)) translateY(calc(var(--distance-inter-base-ico) * -1)) rotateX(var(--angle-presque-vertical-ico)) rotate(180deg);
+}
+
+#ico6{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(calc(var(--decalage-z-bis-ico) * -1)) translateX(var(--decalage-x-bis-ico)) rotateY(-72deg) rotateX(var(--angle-presque-vertical-ico));
+}
+
+#ico12{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(calc(var(--decalage-z-bis-ico) * -1)) translateX(calc(var(--decalage-x-bis-ico) * -1)) rotateY(72deg) rotateX(var(--angle-presque-vertical-ico));
+}
+
+#ico11{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(var(--decalage-z-ico)) translateX(var(--decalage-x-ico)) rotateY(-144deg) rotateX(var(--angle-presque-vertical-ico));
+}
+
+#ico5{
+    transform-origin: var(--milieu-ico) var(--hauteur-ico);
+    transform: translateZ(var(--decalage-z-ico)) translateX(calc(var(--decalage-x-ico) * -1)) rotateY(144deg) rotateX(var(--angle-presque-vertical-ico));
+}
+
+#ico20{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--hauteur-cupule-ico) + var(--hauteur-ico))) rotateX(calc(var(--angle-sommet-ico) + 180deg));
+}
+
+#ico2{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--hauteur-cupule-ico) + var(--hauteur-ico))) rotateY(72deg) rotateX(calc(var(--angle-sommet-ico) + 180deg));
+}
+
+#ico14{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--hauteur-cupule-ico) + var(--hauteur-ico))) rotateY(-72deg) rotateX(calc(var(--angle-sommet-ico) + 180deg));
+}
+
+#ico18{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--hauteur-cupule-ico) + var(--hauteur-ico))) rotateY(144deg) rotateX(calc(var(--angle-sommet-ico) + 180deg));
+}
+
+#ico4{
+    transform-origin: var(--milieu-ico) 0;
+    transform: translateY(calc(var(--hauteur-cupule-ico) + var(--hauteur-ico))) rotateY(-144deg) rotateX(calc(var(--angle-sommet-ico) + 180deg));
+}

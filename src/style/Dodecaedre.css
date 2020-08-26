@@ -1,0 +1,12 @@
+.dodecaedre{
+    width: 10vh;
+    height: 10vh;
+    transform-style: preserve-3d;
+    transform-origin: 15vh 15vh 0vh;   
+}
+
+.face-dodecaedre{
+    transform-origin: 50% 100%;
+    transform-style: preserve-3d;
+    position: absolute;
+}
